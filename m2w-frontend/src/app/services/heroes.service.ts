@@ -17,15 +17,15 @@ export class HeroesService {
         return this.http.get<Hero[]>(`${environment.apiURL}heroes`);
     }
 
-    getHeroById(id: number): Observable<Hero> {
-        return this.http.get<Hero>(`${environment.apiURL}heroes/${id}`);
+    getHeroById(heroId: number): Observable<Hero> {
+        return this.http.get<Hero>(`${environment.apiURL}heroes/${heroId}`);
     }
 
-    updateHero(idHero: number, heroToUpdate: HeroUpdate): Observable<Hero> {
-        return this.http.patch<Hero>(`${environment.apiURL}heroes/${idHero}`, heroToUpdate);
+    updateHero(heroId: number, heroToUpdate: HeroUpdate): Observable<Hero> {
+        return this.http.patch<Hero>(`${environment.apiURL}heroes/${heroId}`, heroToUpdate);
     }
 
-    deleteHero(idHero: number): Observable<{}>{
-        return this.http.delete<{}>(`${environment.apiURL}heroes/${idHero}`);
+    deleteHero(heroId: number): Observable<{}>{
+        return this.http.delete<{}>(`${environment.apiURL}heroes/${heroId}`);
     }
 }
