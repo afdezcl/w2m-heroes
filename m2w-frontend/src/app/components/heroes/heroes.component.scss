@@ -1,0 +1,13 @@
+.content {
+    padding: 2rem;
+}
+
+@media(min-width: 1199.99px) {
+    .content {
+        padding: 5rem 15rem;
+    }
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}
