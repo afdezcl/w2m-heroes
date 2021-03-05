@@ -5,7 +5,7 @@ import { HeroesRoutingModule } from './heroes-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -13,7 +13,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
     FlexLayoutModule,
 
-    MatToolbarModule,
     MatCardModule,
     MatButtonModule
   ],
