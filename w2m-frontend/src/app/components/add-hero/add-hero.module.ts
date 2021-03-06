@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { DirectivesModule } from 'src/app/ui-controls/directives/directives.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    DirectivesModule,
 
     // MATERIAL
     MatButtonModule,
