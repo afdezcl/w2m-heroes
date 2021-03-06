@@ -40,12 +40,16 @@ export class AddHeroComponent implements OnInit {
   addHeroAttempt(): void {
     if (this.addHeroForm.valid) {
       const hero: Hero = {
-        id: Math.random(),
+        id: Math.floor(Math.random()), // In real APP this id must be generate by the API
         name: this.form.name.value,
         description: this.form.description.value,
         imageURL: this.form.imageURL.value
       };
 
+      this.heroesService.addHero(hero)
+        .subscribe(() => {
+          this.router.navigateByUrl('');
+        });
     }
   }
 }

@@ -21,6 +21,10 @@ export class HeroesService {
         return this.http.get<Hero>(`${environment.apiURL}heroes/${heroId}`);
     }
 
+    addHero(hero: Hero): Observable<Hero> {
+        return this.http.post<Hero>(`${environment.apiURL}heroes`, hero);
+    }
+
     updateHero(heroId: number, heroToUpdate: HeroUpdate): Observable<Hero> {
         return this.http.patch<Hero>(`${environment.apiURL}heroes/${heroId}`, heroToUpdate);
     }

@@ -11,14 +11,17 @@
         <mat-form-field class="mat-field-width">
           <mat-label>Nombre del héroe</mat-label>
           <input matInput placeholder="Introduce el nombre" formControlName="name">
-          <mat-error *ngIf="addHeroForm.hasError('required')">
+          <mat-error>
             Nombre del héroe <strong>requerido</strong>
           </mat-error>
         </mat-form-field>
       
         <mat-form-field class="mat-field-width">
           <mat-label>Descripción</mat-label>
-          <textarea matInput></textarea>
+          <input matInput placeholder="Introduce una descripción" formControlName="description">
+          <mat-error>
+            Descripción <strong>requerida</strong>
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field class="mat-field-width">
@@ -26,7 +29,7 @@
           <input matInput placeholder="Introduce la url de la imagen">
         </mat-form-field>
 
-        <button type="submit" mat-raised-button color="primary" class="mat-field-width" [disabled]="addHeroForm.invalid">Guardar cambios</button>
+        <button type="submit" mat-raised-button color="primary" class="mat-field-width" [disabled]="addHeroForm.invalid">Añadir héroe</button>
       </form>
     </div>
   </div>
