@@ -9,7 +9,7 @@ export class ToUpperCaseDirective {
     public reference: ElementRef
   ) { }
 
-  @HostListener('input', ['$event']) onInput(event) {
+  @HostListener('input', ['$event']) onInput(event): void {
     this.reference.nativeElement.value = event.target.value.toUpperCase();
   }
 }
