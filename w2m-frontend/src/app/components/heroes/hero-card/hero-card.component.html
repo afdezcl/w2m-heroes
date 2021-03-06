@@ -11,6 +11,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Editar</button>
-    <button mat-raised-button color="warn">Borrar</button>
+    <button mat-raised-button color="warn" (click)="deleteHero(hero.id)">Borrar</button>
   </mat-card-actions>
 </mat-card>

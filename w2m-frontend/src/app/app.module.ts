@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './components/header/header.component';
 import { ToUpperCaseDirective } from './ui-controls/directives/toUpperCase.directive';
+import { MatButtonModule } from '@angular/material/button';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ToUpperCaseDirective
+    ToUpperCaseDirective,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { ToUpperCaseDirective } from './ui-controls/directives/toUpperCase.direc
 
 
     // MATERIAL
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

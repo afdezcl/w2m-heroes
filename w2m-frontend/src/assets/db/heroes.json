@@ -47,12 +47,6 @@
       "name": "BATMAN",
       "description": "Esta es la descripción de BATMAN",
       "imageURL": "http://pngimg.com/uploads/batman/batman_PNG110.png"
-    },
-    {
-      "id": 9,
-      "name": "Manolito",
-      "description": "EL fuerte",
-      "imageURL": ""
     }
   ]
 }
