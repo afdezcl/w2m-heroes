@@ -5,6 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { HeaderComponent } from './header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -13,7 +14,8 @@ describe('HeaderComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
-        MatToolbarModule
+        MatToolbarModule,
+        RouterTestingModule
       ],
       declarations: [ HeaderComponent ]
     })

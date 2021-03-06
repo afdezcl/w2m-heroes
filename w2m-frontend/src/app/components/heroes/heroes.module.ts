@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HeroCardComponent } from './hero-card/hero-card.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatCardModule,
     MatButtonModule
   ],
-  declarations: [HeroesComponent]
+  declarations: [
+    HeroesComponent,
+    HeroCardComponent
+  ]
 })
 export class HeroesModule { }
