@@ -10,6 +10,7 @@ import { HeroesService } from 'src/app/services/heroes.service';
 export class HeroesComponent implements OnInit {
 
   public heroes: Array<Hero>;
+  public pageActual = 1;
 
   constructor(
     private heroesService: HeroesService

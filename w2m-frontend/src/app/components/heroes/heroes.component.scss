@@ -11,3 +11,11 @@
 .content > mat-card {
     margin-bottom: 16px;
 }
+
+.filter-section {
+    margin-bottom: 2rem;
+}
+
+.pagination::ng-deep .ngx-pagination .current {
+    background: #3F51B5;
+}
