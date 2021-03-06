@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroesService } from 'src/app/services/heroes.service';
 
@@ -13,7 +14,8 @@ export class HeroesComponent implements OnInit {
   public pageActual = 1;
 
   constructor(
-    private heroesService: HeroesService
+    private heroesService: HeroesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +27,10 @@ export class HeroesComponent implements OnInit {
       .subscribe((response: Hero[]) => {
         this.heroes = response;
       });
+  }
+
+  goToAddHero(): void {
+    this.router.navigateByUrl('add-hero');
   }
 
 }
