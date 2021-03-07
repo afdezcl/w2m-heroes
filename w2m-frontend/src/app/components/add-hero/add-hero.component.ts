@@ -25,14 +25,14 @@ export class AddHeroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initEditHeroForm();
+    this.initAddHeroForm();
   }
 
   get form(): { [key: string]: AbstractControl } {
     return this.addHeroForm.controls;
   }
 
-  initEditHeroForm(): void {
+  initAddHeroForm(): void {
     this.addHeroForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],

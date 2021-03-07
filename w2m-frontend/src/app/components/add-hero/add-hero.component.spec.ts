@@ -82,9 +82,9 @@ describe('AddHeroComponent', () => {
         it('Should be initialized and call initEditHeroForm', () => {
             fixture.detectChanges();
             expect(fixture).toBeTruthy();
-            const initEditHeroFormSpy = jest.spyOn(component, 'initEditHeroForm');
+            const initAddHeroFormSpy = jest.spyOn(component, 'initAddHeroForm');
             component.ngOnInit();
-            expect(initEditHeroFormSpy).toBeCalled();
+            expect(initAddHeroFormSpy).toBeCalled();
         });
     });
 
