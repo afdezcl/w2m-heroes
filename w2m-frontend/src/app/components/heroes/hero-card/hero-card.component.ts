@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
-import { HeroesService } from 'src/app/services/heroes.service';
+import { HeroesService } from 'src/app/services/heroes/heroes.service';
 import { ConfirmDialogComponent, ConfirmDialogData } from '../../confirm-dialog/confirm-dialog.component';
 
 @Component({

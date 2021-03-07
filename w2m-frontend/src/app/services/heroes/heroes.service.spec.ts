@@ -24,13 +24,13 @@ describe('Service: ExpenseService', () => {
                     id: 1,
                     name: 'SUPERMAN',
                     description: 'Esta es la descripción de SUPERMAN',
-                    imageURL: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngimg.com%2Fimage%2F29170&psig=AOvVaw0BgdekBzmyJJnL5HSfY_Au&ust=1614983464803000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPi95q_Yl-8CFQAAAAAdAAAAABAI'
+                    imageURL: 'https://pngimg.com/uploads/superman/superman_PNG75.png'
                 },
                 {
                     id: 2,
                     name: 'HULK',
                     description: 'Esta es la descripción de HULK',
-                    imageURL: 'https://www.google.com/imgres?imgurl=http%3A%2F%2Fpngimg.com%2Fuploads%2Fhulk%2Fhulk_PNG82.png&imgrefurl=http%3A%2F%2Fpngimg.com%2Fimage%2F63416&tbnid=sIlcX00RQ1HjlM&vet=12ahUKEwi0i8qz2ZfvAhUV-4UKHQ4pCUIQMygAegUIARCpAQ..i&docid=qPdNW5pXnXHjiM&w=3024&h=3888&q=HUL%20image%20png&ved=2ahUKEwi0i8qz2ZfvAhUV-4UKHQ4pCUIQMygAegUIARCpAQ'
+                    imageURL: 'https://pngimg.com/uploads/superman/superman_PNG75.png'
                 }];
 
             const httpMock = {
@@ -53,7 +53,7 @@ describe('Service: ExpenseService', () => {
                 id: 1,
                 name: 'SUPERMAN',
                 description: 'Esta es la descripción de SUPERMAN',
-                imageURL: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngimg.com%2Fimage%2F29170&psig=AOvVaw0BgdekBzmyJJnL5HSfY_Au&ust=1614983464803000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPi95q_Yl-8CFQAAAAAdAAAAABAI'
+                imageURL: 'https://pngimg.com/uploads/superman/superman_PNG75.png'
             };
 
             const httpMock = {
@@ -75,6 +75,7 @@ describe('Service: ExpenseService', () => {
             const heroUpdate: HeroUpdate = {
                 name: 'SUPERMAN',
                 description: 'Nueva descripcion',
+                imageURL: 'https://pngimg.com/uploads/superman/superman_PNG75.png'
             };
 
             const response: Hero = {
