@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
-import { HeroesService } from 'src/app/services/heroes.service';
+import { HeroesService } from 'src/app/services/heroes/heroes.service';
 
 @Component({
   selector: 'app-add-hero',
@@ -40,8 +40,8 @@ export class AddHeroComponent implements OnInit {
   addHeroAttempt(): void {
     if (this.addHeroForm.valid) {
       const hero: Hero = {
-        id: Math.floor(Math.random()), // In real APP this id must be generate by the API
-        name: this.form.name.value,
+        id: Math.floor(Math.random()), // In a real APP, this id must be generate by the API (Backend)
+        name: this.form.name.value.toUpperCase(),
         description: this.form.description.value,
         imageURL: this.form.imageURL.value
       };

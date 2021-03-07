@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
-import { HeroesService } from 'src/app/services/heroes.service';
+import { HeroesService } from 'src/app/services/heroes/heroes.service';
 
 @Component({
   selector: 'app-heroes',
@@ -33,4 +33,7 @@ export class HeroesComponent implements OnInit {
     this.router.navigateByUrl('add-hero');
   }
 
+  removeHeroFromList(heroId: number): void {
+    this.heroes.filter((hero: Hero) => hero.id !== heroId);
+  }
 }

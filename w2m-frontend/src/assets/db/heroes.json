@@ -4,7 +4,7 @@
       "id": 1,
       "name": "SUPERMAN",
       "description": "Esta es la descripción de SUPERMAN",
-      "imageURL": "https://pngimg.com/uploads/superman/superman_PNG75.png"
+      "imageURL": "https://pngimg.com/uploads/superman/superman_PNG15.png"
     },
     {
       "id": 2,
@@ -31,12 +31,6 @@
       "imageURL": "https://pngimg.com/uploads/ironman/ironman_PNG44.png"
     },
     {
-      "id": 6,
-      "name": "SPIDERMAN",
-      "description": "Esta es la descripción de SPIDERMAN",
-      "imageURL": "http://www.pngall.com/wp-content/uploads/2016/05/Spider-Man-Download-PNG.png"
-    },
-    {
       "id": 7,
       "name": "BLACK PANTHER",
       "description": "Esta es la descripción de BLACK PANTHER",
@@ -47,12 +41,6 @@
       "name": "BATMAN",
       "description": "Esta es la descripción de BATMAN",
       "imageURL": "http://pngimg.com/uploads/batman/batman_PNG110.png"
-    },
-    {
-      "id": 9,
-      "name": "Manolito",
-      "description": "EL fuerte",
-      "imageURL": ""
     }
   ]
 }
