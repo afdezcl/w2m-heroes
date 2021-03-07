@@ -12,6 +12,10 @@
     margin-bottom: 2rem;
 }
 
+.add-hero-section > div > button {
+    min-width: 300px;
+}
+
 .pagination::ng-deep .ngx-pagination .current {
     background: #3F51B5;
 }

@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroUpdate } from 'src/app/models/heroUpdate.interface';
 import { HeroesService } from 'src/app/services/heroes/heroes.service';
@@ -20,7 +22,8 @@ export class EditHeroComponent implements OnInit {
     private formBuilder: FormBuilder,
     private heroesService: HeroesService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.activatedRoute.paramMap.subscribe(params => {
       this.heroId = +params.get('id');
@@ -65,7 +68,11 @@ export class EditHeroComponent implements OnInit {
       this.heroesService.updateHero(this.heroId, heroToUpdate)
         .subscribe(() => {
           this.router.navigateByUrl('/');
-        });
+        }, (error) => this.handleDeleteHeroError(error));
     }
+  }
+
+  handleDeleteHeroError(error: HttpErrorResponse): void {
+    this.toastr.error(error.message);
   }
 }
