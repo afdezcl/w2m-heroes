@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
@@ -13,6 +13,7 @@ import { ConfirmDialogComponent, ConfirmDialogData } from '../../confirm-dialog/
 export class HeroCardComponent implements OnInit {
 
   @Input() hero: Hero;
+  @Output() heroIdDeleted = new EventEmitter<number>();
 
   constructor(
     private dialog: MatDialog,
@@ -36,7 +37,9 @@ export class HeroCardComponent implements OnInit {
     dialogReference.afterClosed().subscribe(result => {
       if (result) {
         this.heroesService.deleteHero(heroId)
-          .subscribe();
+          .subscribe(() => {
+            this.heroIdDeleted.emit(heroId);
+          });
       }
     });
   }

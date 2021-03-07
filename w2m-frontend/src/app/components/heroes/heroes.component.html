@@ -14,7 +14,7 @@
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
     <div [fxFlex]="(100/3) + '%'" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="33%"
       *ngFor="let hero of heroes | paginate: { itemsPerPage: 3, currentPage: pageActual }">
-      <app-hero-card [hero]="hero"></app-hero-card>
+      <app-hero-card [hero]="hero" (heroIdDeleted)="removeHeroFromList($event)"></app-hero-card>
     </div>
   </div>
 </div>

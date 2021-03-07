@@ -33,4 +33,7 @@ export class HeroesComponent implements OnInit {
     this.router.navigateByUrl('add-hero');
   }
 
+  removeHeroFromList(heroId: number): void {
+    this.heroes.filter((hero: Hero) => hero.id !== heroId);
+  }
 }
