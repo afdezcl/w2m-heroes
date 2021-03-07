@@ -64,7 +64,7 @@ export class EditHeroComponent implements OnInit {
 
       this.heroesService.updateHero(this.heroId, heroToUpdate)
         .subscribe(() => {
-          this.router.navigateByUrl('');
+          this.router.navigateByUrl('/');
         });
     }
   }

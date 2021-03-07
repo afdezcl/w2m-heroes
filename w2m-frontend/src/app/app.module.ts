@@ -10,7 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoaderInterceptor } from './ui-controls/interceptors/loader.interceptor';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderService } from './services/loader/loader.service';
+import { HeroesService } from './services/heroes/heroes.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatToolbarModule,
     MatButtonModule,
     MatDialogModule,
-    MatProgressSpinnerModule
   ],
   providers: [
+    LoaderService,
+    HeroesService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

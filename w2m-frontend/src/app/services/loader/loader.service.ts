@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 
 @Injectable()
 export class LoaderService {
 
-    isLoading = new Subject<boolean>();
+    isLoading = new ReplaySubject<boolean>(1);
 
     show(): void {
         this.isLoading.next(true);

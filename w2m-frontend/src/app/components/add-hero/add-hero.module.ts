@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { DirectivesModule } from 'src/app/ui-controls/directives/directives.module';
+import { LoaderModule } from '../loader/loader.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { DirectivesModule } from 'src/app/ui-controls/directives/directives.modu
     FormsModule,
     ReactiveFormsModule,
     DirectivesModule,
+    LoaderModule,
 
     // MATERIAL
     MatButtonModule,

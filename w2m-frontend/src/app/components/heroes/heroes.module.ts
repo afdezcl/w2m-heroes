@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeroCardComponent } from './hero-card/hero-card.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoaderModule } from '../loader/loader.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -15,6 +17,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HeroesRoutingModule,
     NgxPaginationModule,
     FlexLayoutModule,
+    LoaderModule,
+    FormsModule, ReactiveFormsModule,
 
     MatCardModule,
     MatButtonModule,
