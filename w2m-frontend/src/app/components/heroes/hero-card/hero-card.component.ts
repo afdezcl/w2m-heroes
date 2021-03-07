@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { ConfirmDialogComponent, ConfirmDialogData } from '../../confirm-dialog/confirm-dialog.component';
@@ -15,7 +16,8 @@ export class HeroCardComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private heroesService: HeroesService
+    private heroesService: HeroesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +39,10 @@ export class HeroCardComponent implements OnInit {
           .subscribe();
       }
     });
+  }
 
+  editHero(heroId: number): void {
+    this.router.navigateByUrl(`/edit-hero/${heroId}`);
   }
 
 }

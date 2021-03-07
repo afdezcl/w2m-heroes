@@ -41,7 +41,7 @@ export class AddHeroComponent implements OnInit {
     if (this.addHeroForm.valid) {
       const hero: Hero = {
         id: Math.floor(Math.random()), // In real APP this id must be generate by the API
-        name: this.form.name.value,
+        name: this.form.name.value.toUpperCase(),
         description: this.form.description.value,
         imageURL: this.form.imageURL.value
       };
