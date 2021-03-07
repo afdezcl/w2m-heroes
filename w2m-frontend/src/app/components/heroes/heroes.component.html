@@ -1,16 +1,16 @@
 <app-loader></app-loader>
 <div class="content">
-  <div class="add-hero-section" fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex.xs="100%" fxFlex.lg="100%">
+  <div class="add-hero-section" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column" fxFlexFill>
+    <div fxLayoutAlign="center center">
       <button mat-raised-button color="primary" (click)="goToAddHero()">Añadir héroe</button>
     </div>
   </div>
-  <div class="filter-section" fxLayout="row" fxLayoutAlign="space-between center">
-    <div fxFlex.xs="100%" fxFlex.lg="50%">
+  <div class="filter-section" fxLayout="row" fxLayoutAlign="space-between center" fxLayout.xs="column" fxFlexFill>
+    <div >
       <pagination-controls class="pagination" (pageChange)="pageActual = $event" responsive="true"
         previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
     </div>
-    <div fxFlex.xs="100%" fxFlex.lg="50%">
+    <div fxLayoutAlign="end center">
       <mat-form-field>
         <mat-label>Buscar héroe</mat-label>
         <input matInput placeholder="Ejemplo: Superman" [formControl]="searchControl">
