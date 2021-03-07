@@ -1,6 +1,6 @@
 import { of } from 'rxjs';
-import { Hero } from '../models/hero.interface';
-import { HeroUpdate } from '../models/heroUpdate.interface';
+import { Hero } from '../../models/hero.interface';
+import { HeroUpdate } from '../../models/heroUpdate.interface';
 import { HeroesService } from './heroes.service';
 
 describe('Service: ExpenseService', () => {

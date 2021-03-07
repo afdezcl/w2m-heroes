@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroUpdate } from 'src/app/models/heroUpdate.interface';
-import { HeroesService } from 'src/app/services/heroes.service';
+import { HeroesService } from 'src/app/services/heroes/heroes.service';
 
 @Component({
   selector: 'app-edit-hero',
