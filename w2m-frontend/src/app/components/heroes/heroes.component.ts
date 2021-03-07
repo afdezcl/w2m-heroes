@@ -35,7 +35,7 @@ export class HeroesComponent implements OnInit {
     this.heroesService.getHeroes()
       .subscribe((response: Hero[]) => {
         this.heroes = response;
-      }, (error) => this.handleDeleteHeroError(error));
+      }, (error) => this.handleHeroError(error));
   }
 
   goToAddHero(): void {
@@ -56,10 +56,10 @@ export class HeroesComponent implements OnInit {
         })
       ).subscribe((response: Hero[]) => {
         this.heroes = response;
-      }, (error) => this.handleDeleteHeroError(error));
+      }, (error) => this.handleHeroError(error));
   }
 
-  handleDeleteHeroError(error: HttpErrorResponse): void {
+  handleHeroError(error: HttpErrorResponse): void {
     this.toastr.error(error.message);
   }
 }

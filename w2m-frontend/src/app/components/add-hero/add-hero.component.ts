@@ -52,11 +52,11 @@ export class AddHeroComponent implements OnInit {
       this.heroesService.addHero(hero)
         .subscribe(() => {
           this.router.navigateByUrl('');
-        }, (error) => this.handleDeleteHeroError(error));
+        }, (error) => this.handleAddHeroError(error));
     }
   }
 
-  handleDeleteHeroError(error: HttpErrorResponse): void {
+  handleAddHeroError(error: HttpErrorResponse): void {
     this.toastr.error(error.message);
   }
 }

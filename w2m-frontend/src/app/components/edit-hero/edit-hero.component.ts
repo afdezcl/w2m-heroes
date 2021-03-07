@@ -68,11 +68,11 @@ export class EditHeroComponent implements OnInit {
       this.heroesService.updateHero(this.heroId, heroToUpdate)
         .subscribe(() => {
           this.router.navigateByUrl('/');
-        }, (error) => this.handleDeleteHeroError(error));
+        }, (error) => this.handleEditHeroError(error));
     }
   }
 
-  handleDeleteHeroError(error: HttpErrorResponse): void {
+  handleEditHeroError(error: HttpErrorResponse): void {
     this.toastr.error(error.message);
   }
 }
