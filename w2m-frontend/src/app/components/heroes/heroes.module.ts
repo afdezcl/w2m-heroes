@@ -10,6 +10,7 @@ import { HeroCardComponent } from './hero-card/hero-card.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoaderModule } from '../loader/loader.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule
   ],
   declarations: [
     HeroesComponent,
