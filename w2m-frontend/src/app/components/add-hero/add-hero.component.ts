@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroesService } from 'src/app/services/heroes/heroes.service';
 
@@ -18,7 +20,8 @@ export class AddHeroComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private heroesService: HeroesService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +52,11 @@ export class AddHeroComponent implements OnInit {
       this.heroesService.addHero(hero)
         .subscribe(() => {
           this.router.navigateByUrl('');
-        });
+        }, (error) => this.handleDeleteHeroError(error));
     }
+  }
+
+  handleDeleteHeroError(error: HttpErrorResponse): void {
+    this.toastr.error(error.message);
   }
 }

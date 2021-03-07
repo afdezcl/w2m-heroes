@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoaderInterceptor } from './ui-controls/interceptors/loader.interceptor';
 import { LoaderService } from './services/loader/loader.service';
 import { HeroesService } from './services/heroes/heroes.service';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HeroesService } from './services/heroes/heroes.service';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ToastrModule.forRoot(),
 
 
     // MATERIAL

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroesService } from 'src/app/services/heroes/heroes.service';
 import { ConfirmDialogComponent, ConfirmDialogData } from '../../confirm-dialog/confirm-dialog.component';
+import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-hero-card',
@@ -18,7 +20,8 @@ export class HeroCardComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private heroesService: HeroesService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -39,13 +42,17 @@ export class HeroCardComponent implements OnInit {
         this.heroesService.deleteHero(heroId)
           .subscribe(() => {
             this.heroIdDeleted.emit(heroId);
-          });
+          }, (error) => this.handleDeleteHeroError(error));
       }
     });
   }
 
   editHero(heroId: number): void {
     this.router.navigateByUrl(`/edit-hero/${heroId}`);
+  }
+
+  handleDeleteHeroError(error: HttpErrorResponse): void {
+    this.toastr.error(error.message);
   }
 
 }

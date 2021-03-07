@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Hero } from 'src/app/models/hero.interface';
 import { HeroesService } from 'src/app/services/heroes/heroes.service';
@@ -18,7 +20,8 @@ export class HeroesComponent implements OnInit {
 
   constructor(
     private heroesService: HeroesService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.searchControl = new FormControl();
   }
@@ -32,7 +35,7 @@ export class HeroesComponent implements OnInit {
     this.heroesService.getHeroes()
       .subscribe((response: Hero[]) => {
         this.heroes = response;
-      });
+      }, (error) => this.handleDeleteHeroError(error));
   }
 
   goToAddHero(): void {
@@ -53,8 +56,10 @@ export class HeroesComponent implements OnInit {
         })
       ).subscribe((response: Hero[]) => {
         this.heroes = response;
-      });
+      }, (error) => this.handleDeleteHeroError(error));
   }
 
-
+  handleDeleteHeroError(error: HttpErrorResponse): void {
+    this.toastr.error(error.message);
+  }
 }
