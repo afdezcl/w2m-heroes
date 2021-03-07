@@ -4,7 +4,7 @@
       <form [formGroup]="editHeroForm" (submit)="editHero()">
         <div class="image-container" fxLayout="row" fxLayoutAlign="center center">
           <div fxFlex.xs="100%" fxFlex.md="50%" fxFlex.lg="50%">
-            <img src="{{form.imageURL.value}}" alt="{{ hero.name }}" *ngIf="imageURLIsCorrect()">            
+            <img src="{{form.imageURL.value}}" alt="{{ hero.name }}">            
           </div>
         </div>
 
