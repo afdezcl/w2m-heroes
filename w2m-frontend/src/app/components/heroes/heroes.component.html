@@ -5,10 +5,16 @@
       <button mat-raised-button color="primary" (click)="goToAddHero()">Añadir héroe</button>
     </div>
   </div>
-  <div class="filter-section" fxLayout="row" fxLayoutAlign="start center">
-    <div fxFlex.xs="100%" fxFlex.lg="100%">
+  <div class="filter-section" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex.xs="100%" fxFlex.lg="50%">
       <pagination-controls class="pagination" (pageChange)="pageActual = $event" responsive="true"
         previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+    <div fxFlex.xs="100%" fxFlex.lg="50%">
+      <mat-form-field>
+        <mat-label>Buscar héroe</mat-label>
+        <input matInput placeholder="Ejemplo: Superman" [formControl]="searchControl">
+      </mat-form-field>
     </div>
   </div>
   <div fxLayout="row wrap" fxLayoutGap="16px grid">

@@ -32,4 +32,8 @@ export class HeroesService {
     deleteHero(heroId: number): Observable<{}>{
         return this.http.delete<{}>(`${environment.apiURL}heroes/${heroId}`);
     }
+
+    searchHero(heroToSeach: string): Observable<Hero[]> {
+        return this.http.get<Hero[]>(`${environment.apiURL}heroes?q=${heroToSeach}`);
+    }
 }
