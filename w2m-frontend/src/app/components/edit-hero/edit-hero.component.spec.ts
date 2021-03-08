@@ -67,8 +67,7 @@ describe('EditHeroComponent', () => {
         fixture = TestBed.createComponent(EditHeroComponent);
 
         heroesServiceMock = {
-            updateHero: jest.fn(),
-            getHeroById: jest.fn()
+            updateHero: jest.fn()
         };
 
         routerMock = {
