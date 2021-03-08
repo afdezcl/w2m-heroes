@@ -35,5 +35,7 @@ A branch must be named following this convention:
 * Start with W2M-[ISSUE_NUMBER]_[SHORT_DESCRIPTION]
 * For example: `W2M-9_login_page`
 
-## NOTE
-When you realize a PATCH, POST, DELETE actions, the application will have a hot reloading because db.json file will be changed (and Angular has Live/Hot reloading with each change in a file).
+## NOTES
+* All this project has been divide in specific issues. Each issue is a BRANCH. Each branch is a PULL REQUEST to development branch. If all is correct, appear a new pull request from development to master branch.
+
+* When you realize a PATCH, POST, DELETE actions, the application will have a hot reloading because db.json file will be changed (and Angular has Live/Hot reloading with each change in a file).
