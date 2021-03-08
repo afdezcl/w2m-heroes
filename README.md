@@ -3,12 +3,16 @@
 ## Stack
 * Angular 11
 * Json-Server (as FAKE API)
+* Docker
 * Angular Material (as CSS framework)
 * Husky (as hooks pre-commit & pre-push)
 * TSLint
-* Jest (for unit tests
+* Jest (for unit tests)
 
-## How to run project in local
+## How to run project in local (with Docker)
+1. Go to `w2m-frontend` and run `docker-compose up --build -d` to launch FAKE API in `http://localhost:3000` and Angular in `http://localhost:4200`
+
+## How to run project in local (without Docker)
 1. Go to `w2m-frontend` and run `npm run server` to launch FAKE API in `http://localhost:3000`
 2. Go to `w2m-frontend` and run `ng serve -o` to launch frontend application in `http://localhost:4200`
 
