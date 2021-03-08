@@ -1,0 +1,37 @@
+<app-loader></app-loader>
+<div class="content">
+  <div div fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex.xs="100%" fxFlex.md="50%" fxFlex.lg="50%">
+      <form [formGroup]="addHeroForm" (submit)="addHeroAttempt()">
+        <div class="image-container" fxLayout="row" fxLayoutAlign="center center">
+          <div fxFlex.xs="100%" fxFlex.md="50%" fxFlex.lg="50%">
+            <img src="{{form.imageURL.value}}" height="200">
+          </div>
+        </div>
+
+        <mat-form-field class="mat-field-width">
+          <mat-label>Nombre del héroe</mat-label>
+          <input appToUpperCase matInput placeholder="Introduce el nombre" formControlName="name">
+          <mat-error>
+            Nombre del héroe <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field class="mat-field-width">
+          <mat-label>Descripción</mat-label>
+          <input matInput placeholder="Introduce una descripción" formControlName="description">
+          <mat-error>
+            Descripción <strong>requerida</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mat-field-width">
+          <mat-label>URL de la imagen</mat-label>
+          <input matInput placeholder="Introduce la url de la imagen" formControlName="imageURL">
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" class="mat-field-width" [disabled]="addHeroForm.invalid">Añadir héroe</button>
+      </form>
+    </div>
+  </div>
+</div>

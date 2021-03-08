@@ -1,0 +1,21 @@
+.content {
+    padding: 2rem;
+}
+
+@media(min-width: 1199.99px) {
+    .content {
+        padding: 5rem 15rem;
+    }
+}
+
+.filter-section, .add-hero-section {
+    margin-bottom: 2rem;
+}
+
+.add-hero-section > div > button {
+    min-width: 300px;
+}
+
+.pagination::ng-deep .ngx-pagination .current {
+    background: #3F51B5;
+}

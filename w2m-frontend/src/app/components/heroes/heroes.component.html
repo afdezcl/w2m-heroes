@@ -1,0 +1,26 @@
+<app-loader></app-loader>
+<div class="content">
+  <div class="add-hero-section" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column" fxFlexFill>
+    <div fxLayoutAlign="center center">
+      <button mat-raised-button color="primary" (click)="goToAddHero()">Añadir héroe</button>
+    </div>
+  </div>
+  <div class="filter-section" fxLayout="row" fxLayoutAlign="space-between center" fxLayout.xs="column" fxFlexFill>
+    <div >
+      <pagination-controls class="pagination" (pageChange)="pageActual = $event" responsive="true"
+        previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+    <div fxLayoutAlign="end center">
+      <mat-form-field>
+        <mat-label>Buscar héroe</mat-label>
+        <input matInput placeholder="Ejemplo: Superman" [formControl]="searchControl">
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div [fxFlex]="(100/3) + '%'" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%" fxFlex.lg="33%"
+      *ngFor="let hero of heroes | paginate: { itemsPerPage: 3, currentPage: pageActual }">
+      <app-hero-card [hero]="hero" (heroIdDeleted)="removeHeroFromList($event)"></app-hero-card>
+    </div>
+  </div>
+</div>

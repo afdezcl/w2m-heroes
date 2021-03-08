@@ -1,0 +1,17 @@
+<app-loader></app-loader>
+<mat-card class="mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>{{ hero.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{ hero.imageURL }}" height="400" *ngIf="hero.imageURL">
+  <img mat-card-image src="../../../assets/images/not_found.png" height="400" *ngIf="!hero.imageURL">
+  <mat-card-content>
+    <p>
+      {{ hero.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions align="center">
+    <button mat-raised-button color="primary" (click)="editHero(hero.id)">Editar</button>
+    <button mat-raised-button color="warn" (click)="deleteHero(hero.id)">Borrar</button>
+  </mat-card-actions>
+</mat-card>
