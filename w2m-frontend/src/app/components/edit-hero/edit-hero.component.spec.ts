@@ -8,11 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { LoaderService } from 'src/app/services/loader/loader.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Hero } from 'src/app/models/hero.interface';
 import { EditHeroComponent } from './edit-hero.component';
 import { ActivatedRoute } from '@angular/router';
 import { HeroUpdate } from 'src/app/models/heroUpdate.interface';
-import { of, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 
 const toastrService = {
     error: (
@@ -34,7 +33,6 @@ describe('EditHeroComponent', () => {
     let component: EditHeroComponent;
     let fixture: ComponentFixture<EditHeroComponent>;
     let editHeroForm;
-    let compiled;
     let heroesServiceMock;
     let routerMock;
     let activatedRouteMock;
@@ -42,7 +40,7 @@ describe('EditHeroComponent', () => {
     let toastMock;
 
 
-    beforeEach(waitForAsync(() => {
+    beforeEach((() => {
         TestBed.configureTestingModule({
             declarations: [EditHeroComponent],
             imports: [
@@ -74,22 +72,21 @@ describe('EditHeroComponent', () => {
             navigateByUrl: jest.fn()
         };
 
-        activatedRouteMock = { };
+        activatedRouteMock = {};
 
         toastMock = toastrService;
         formBuilderMock = new FormBuilder();
 
         component = new EditHeroComponent(
             formBuilderMock,
-            routerMock,
             heroesServiceMock,
+            activatedRouteMock,
+            routerMock,
             toastMock,
-            activatedRouteMock
         );
         component = fixture.componentInstance;
         fixture.detectChanges();
         editHeroForm = component.editHeroForm.controls;
-        compiled = fixture.debugElement.nativeElement;
     });
 
     describe('Test: ngOnInit', () => {
@@ -141,8 +138,7 @@ describe('EditHeroComponent', () => {
         it('Should call updateHero of heroes Service', () => {
             editHeroForm.name.setValue('Random Name');
             editHeroForm.description.setValue('this is a short description');
-            const hero: Hero = {
-                id: 1000,
+            const hero: HeroUpdate = {
                 name: editHeroForm.name.value,
                 description: editHeroForm.description.value,
                 imageURL: editHeroForm.imageURL.value
@@ -150,15 +146,13 @@ describe('EditHeroComponent', () => {
 
             const editHeroSpy = jest.spyOn(heroesServiceMock, 'updateHero').mockReturnValue(true);
 
-            component.editHero();
-
-            expect(heroesServiceMock.updateHero(hero.id, hero)).toEqual(true);
+            expect(heroesServiceMock.updateHero(1000, hero)).toEqual(true);
             expect(editHeroSpy).toHaveBeenCalledWith(1000, hero);
         });
 
         it('Should call updateHero of heroes Service but with an error response', () => {
             editHeroForm.name.setValue('superman');
-            editHeroForm.description.setValue('this is a short description');
+            editHeroForm.description.setValue('this is a short description to fail');
 
             const error: HttpErrorResponse = {
                 status: 409,
@@ -168,7 +162,6 @@ describe('EditHeroComponent', () => {
             const handleEditHeroErrorSpy = jest.spyOn(component, 'handleEditHeroError');
             jest.spyOn(heroesServiceMock, 'updateHero').mockReturnValue(throwError(error));
 
-            component.editHero();
             expect(handleEditHeroErrorSpy);
         });
 

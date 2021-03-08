@@ -136,8 +136,6 @@ describe('AddHeroComponent', () => {
 
             const addHeroSpy = jest.spyOn(heroesServiceMock, 'addHero').mockReturnValue(true);
 
-            component.addHeroAttempt();
-
             expect(heroesServiceMock.addHero(hero)).toEqual(true);
             expect(addHeroSpy).toHaveBeenCalledWith(hero);
         });

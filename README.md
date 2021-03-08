@@ -19,7 +19,7 @@
 :warning: NOTE: It is advisable run `npm install` in `w2m-frontend` folder to install all dependencies at each project.
 
 ## How to launch unit tests in frontend project
-* You can go to `w2m-frontend` (with the fake api down) and run `npm run test` to launch frontend unit tests.
+* You can go to `w2m-frontend` and run `npm run test` to launch frontend unit tests.
 
 
 ## Commit naming convention
