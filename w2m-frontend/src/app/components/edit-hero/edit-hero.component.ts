@@ -24,13 +24,10 @@ export class EditHeroComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private toastr: ToastrService
-  ) {
-    this.activatedRoute.paramMap.subscribe(params => {
-      this.heroId = +params.get('id');
-    });
-  }
+  ) { }
 
   ngOnInit(): void {
+    this.heroId = +this.activatedRoute.snapshot.paramMap.get('id');
     this.initEditHeroForm();
     this.getHeroById();
   }

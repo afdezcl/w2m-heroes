@@ -1,8 +1,8 @@
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
-import { async, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { AddHeroComponent } from './add-hero.component';
 import { LoaderModule } from '../loader/loader.module';
@@ -115,7 +115,7 @@ describe('AddHeroComponent', () => {
     });
 
     describe('Test: addHeroAttempt()', () => {
-        it('Should NOT call register of authentication Service', () => {
+        it('Should NOT call addHero of heroes Service', () => {
             addHeroForm.name.setValue('');
             addHeroForm.description.setValue('');
 
